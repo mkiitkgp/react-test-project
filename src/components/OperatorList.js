@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SingleBlockOperator from './SingleBlockOperator';
 import SingleOperatorPage from './SingleOperatorPage';
+import { Outlet } from 'react-router-dom';
 
 let operator_list_URL = 'http://localhost:5000/v1/operators';
 
@@ -33,8 +34,8 @@ export default function OperatorList ({name}) {
     }
 
     return (
-        <div>
-            <h1>Hello customer {name}</h1>
+        <div  style={{margin : '10px' , padding:'10px'}}>
+            <h2 style={{marginBottom : '50px'}}>Hello customer {name}</h2>
             <div className="row">
                 {operatorData.map(oper =>{
                     return (
@@ -44,7 +45,7 @@ export default function OperatorList ({name}) {
                     );
                 })}
             </div>
-            <SingleOperatorPage />
+            <Outlet/>
         </div>
     );
 }

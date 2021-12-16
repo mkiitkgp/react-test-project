@@ -84,7 +84,7 @@ export default function ServiceOperatorBookings(){
 
     return(
         <>
-        <h1> Service operator bookings</h1>
+        <h2 style={{marginTop:'50px' , marginBottom:'50px'}}> Service operator bookings</h2>
         <table className="table">
             <tr>
                 {tableHeader.map( t => {
